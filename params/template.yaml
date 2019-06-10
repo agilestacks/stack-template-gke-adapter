@@ -1,0 +1,27 @@
+parameters:
+- name: kubernetes.flavor
+  value: gke
+- name: kubernetes.gke.cluster
+
+- name: component.ingress
+  parameters:
+  - name: urlPrefix
+    value: app
+  - name: ssoUrlPrefix
+    value: apps
+
+- name: component.dex
+  parameters:
+  - name: namespace
+    value: dex
+  - name: okta.issuer
+    fromEnv: DEX_OKTA_APP_ISSUER
+  - name: okta.clientId
+    fromEnv: DEX_OKTA_APP_CLIENT_ID
+  - name: okta.clientSecret
+    fromEnv: DEX_OKTA_APP_CLIENT_SECRET
+
+- name: component.cert-manager
+  parameters:
+  - name: default-issuer
+    value: letsencrypt-prod

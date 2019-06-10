@@ -1,0 +1,23 @@
+parameters:
+  - name: cloud.kind
+    value: gcp
+  - name: dns.domain
+    kind: user
+    fromEnv: DOMAIN_NAME
+  - name: cloud.region
+    empty: allow
+    fromEnv: REGION
+  - name: cloud.availabilityZone
+    empty: allow
+    fromEnv: ZONE
+  - name: cloud.gcpProjectId
+    kind: user
+    fromEnv: PROJECT
+
+  - name: terraform.bucket
+    kind: user
+    parameters:
+    - name: name
+      fromEnv: STATE_BUCKET
+    - name: terraform.bucket.region
+      fromEnv: STATE_REGION
