@@ -47,6 +47,7 @@ lifecycle:
     - component.kubernetes-dashboard.enabled:kube-dashboard
 
 outputs:
+- name: cloud.kind
 - name: k8s-gke:dns.domain
 - name: k8s-gke:kubernetes.flavor
 - name: k8s-gke:kubernetes.gke.cluster
