@@ -48,6 +48,8 @@ lifecycle:
 
 outputs:
 - name: cloud.kind
+- name: cloud.region
+- name: cloud.availabilityZone
 - name: k8s-gke:dns.domain
 - name: k8s-gke:kubernetes.flavor
 - name: k8s-gke:kubernetes.gke.cluster
